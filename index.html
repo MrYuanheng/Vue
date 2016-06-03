@@ -1,22 +1,42 @@
-<html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
-    <title>vue练习</title>
-    <meta charset="utf-8">
+    <title></title>
+    <meta charset="UTF-8">
     <script src="vue.js"></script>
 </head>
 <body>
-<div id="vue">
-    <p>{{message}}</p>
-    双向绑定：<input v-model="message">
-    <h4>{{message}}</h4>
-    </div>
+<h1>渲染列表</h1>
+<div id="fo">
+    <ul>
+        <li v-for="text in text">
+            {{text.text}}
+        </li>
+    </ul>
+</div>
+<h1>处理用户输入</h1>
+<div id="reverse">
+    <p>{{name}}</p>
+    <button v-on:click="reverseMessage">转换</button>
+</div>
+</body>
 <script>
-    new Vue({
-        el:'#vue',
+    var reverse=new Vue({
+        el:'#reverse',
         data:{
-            message:'hello'
+            name: 'hello vue.js!'
+        },
+        methods:{
+            reverseMessage:function(){
+                this.name=this.name.split('').reverse().join('')
+            }
         }
     })
+  var fo = new Vue({
+       el:'#fo',
+       data:{
+           text:[{text:'liyang'},
+               {text:'lijiabing'},{text:'yuanheng'}]
+       }
+   })
 </script>
-</body>
 </html>
