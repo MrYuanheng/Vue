@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>vue练习</title>
+    <meta charset="utf-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="vue">
+    <p>{{message}}</p>
+    双向绑定：<input v-model="message">
+    <h4>{{message}}</h4>
+    </div>
+<script>
+    new Vue({
+        el:'#vue',
+        data:{
+            message:'hello'
+        }
+    })
+</script>
+</body>
+</html>
