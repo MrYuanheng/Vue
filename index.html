@@ -18,6 +18,34 @@
     <p>{{name}}</p>
     <button v-on:click="reverseMessage">转换</button>
 </div>
+<h1>综合</h1>
+<div id="app">
+    <input v-model="newtodo" v-on:keyup.enter="addtodo">
+    <ul>
+        <li v-for="todo in todos">
+            <span>{{todo.text}}</span>
+            <button v-on:click="removetodo($index)">X</button>
+        </li>
+    </ul>
+</div>
+<script>
+   new Vue({
+        el:'#app',
+        data:{newtodo:'',todos:[{text:'liyang'}]},
+        methods:{
+            addtodo:function(){
+                var text=this.newtodo.trim()
+                if(text){
+                    this.todos.push({text:text})
+                    this.newtodo=''
+                }
+            },
+            removetodo:function(index){
+                this.todos.splice(index,1)
+            }
+        }
+    })
+</script>
 </body>
 <script>
     var reverse=new Vue({
