@@ -9,6 +9,8 @@
 <div id="example">
     a={{ a }},b={{ b }},c={{c}}
 </div>
+<h1>计算属性</h1>
+<div id="demo">{{name}}</div>
 </body>
 <script>
     var vm=new Vue({
@@ -21,5 +23,14 @@
             }
         }
     })
+    var vm = new Vue({
+        el:'#demo',
+        data: {
+            name: 'Foo',
+            name: 'Bar',
+            name:'Foo Bar'
+        }
+    })
+
 </script>
 </html>
