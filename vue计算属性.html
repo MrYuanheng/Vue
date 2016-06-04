@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>vue.js</title>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<h1>基础例子</h1>
+<div id="example">
+    a={{ a }},b={{ b }},c={{c}}
+</div>
+</body>
+<script>
+    var vm=new Vue({
+        el:'#example',
+        data:{
+            a:1,b:2
+        },computed:{
+            c:function(){
+                return this.b+1
+            }
+        }
+    })
+</script>
+</html>
