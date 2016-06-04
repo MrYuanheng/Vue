@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<h1>绑定HTML Class</h1>
+<h5>对象语法</h5>
+<div id="is" class="static" v-bind:class="{'class-a':isA,'class-b':isB}">sas</div>
+<h5>数组语法</h5>
+<div id="bind" v-bind:class="[classA,classB]">数组</div>
+<h1>绑定内联样式</h1>
+<h5>对象语法</h5>
+<div id="colo" v-bind:style="color:activeColor,fontSize:fontSize+'px'">样式</div>
+<h5>数组语法</h5>
+<div id="sty" v-bind:style="[styleObjectA,styleObjectB]">数组</div>
+</body>
+<script>
+   var vm= new Vue({
+        el:'#is',
+        data:{
+            isA:true,
+            isB:false
+        }
+    })
+    var vm=new Vue({
+        el:'#bind',
+        data:{
+            classA:'class-a',
+            classB:'class-b'
+        }
+    })
+    var vm=new Vue({
+        el:'#colo',
+        data:{
+            styleObject:{
+                color:'red',
+                fontSize:'20px'
+            }
+        }
+    })
+    var vm =new Vue({
+        el:'sty',
+        data:{
+            styleObject:{
+                color:'red',
+                fontSize:'20px'
+            }
+        }
+    })
+</script>
+</html>
