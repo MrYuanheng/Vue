@@ -13,8 +13,39 @@
 <div id="raw">
     <p>name:{{{message}}}</p>
 </div>
+<h1>过滤器</h1>
+<div id="filt">
+    {{name}}<br/>
+    {{name|capitalize}}<br/>
+    {{name|uppercase}}
+
+</div>
+<h1>参数</h1>
+    <div id="mes">
+    <a v-bind:href="url">can</a>
+</div>
+<h1>缩写</h1>
+<a id="sx" :href="url">suo</a>
 </body>
 <script>
+    new Vue({
+        el:'#sx',
+        data:{
+            url:'fast.com'
+        }
+    })
+    new Vue({
+        el:'#mes',
+        data:{
+            url:'fast.com'
+        }
+    })
+    new Vue({
+        el:'#filt',
+        data:{
+            name:'hello'
+        }
+    })
     new Vue({
         el:'#smg',
         data:{
