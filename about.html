@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<h1>文本</h1>
+<div id="smg">
+<p>name:{{{message}}}</p>
+    </div>
+<h1>原始的html</h1>
+<div id="raw">
+    <p>name:{{{message}}}</p>
+</div>
+</body>
+<script>
+    new Vue({
+        el:'#smg',
+        data:{
+            message:'vue文本'
+        }
+    });
+
+    new Vue({
+        el:'#raw',
+        data:{
+            message:'<h1>vue文本</h1>'
+        }
+    })
+</script>
+</html>
