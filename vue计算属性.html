@@ -26,9 +26,13 @@
     var vm = new Vue({
         el:'#demo',
         data: {
-            name: 'Foo',
-            name: 'Bar',
-            name:'Foo Bar'
+            firstname: 'Foo',
+            lastname: 'Bar'
+        },
+        computed:{
+            name:function(){
+                return this.firsname+''+this.lastname
+            }
         }
     })
 
