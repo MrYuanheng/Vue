@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<h1>v-if</h1>
+<div id="temp">
+<template v-if="ok">
+    <h1>liyang</h1>
+    <h2>lijiabin</h2>
+</template>
+<button onclick="vm.ok=true">显示</button>
+<button onclick="vm.ok=false">隐藏</button>
+    </div><hr>
+<div id="show">
+    <p v-if="if">显示1</p>
+    <p v-else>显示2</p>
+    <button onclick="vm.if=true">显示1 </button>
+    <button onclick="vm.if=false">显示2</button>
+</div>
+</body>
+<script>
+    var vm=new Vue({
+        el:'#temp',
+        data:{
+            ok:false
+        }
+    })
+    </script>
+<script>
+    var vm= new Vue({
+        el:'#show',
+        data:{
+            if:true
+
+        }
+    })
+</script>
+</html>
