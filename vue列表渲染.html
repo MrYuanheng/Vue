@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<h4>v-for</h4>
+    <ul id="item">
+        <li v-for="item in items">{{item.name}}</li>
+    </ul>
+<ul id="index">
+    <li v-for="item in items">
+        {{parentname}}-{{$index}}-{{item.name}}
+    </li>
+</ul>
+<h4>template v-for</h4>
+<ul id="temp">
+    <template v-for="item in items">
+        <li>{{item.msg}}</li>
+        <li class="divider">template</li>
+        </template>
+</ul>
+<div>
+    
+</div>
+</body>
+<script>
+    var items=new Vue({
+        el:'#item',
+        data:{
+            items:[
+                {name:'foo'},
+                {name:'bar'}
+            ]
+        }
+    })
+    var index=new Vue({
+        el:'#index',
+        data:{
+            parentname:'parent',
+            items:[
+                {name:'foo'},
+                {name:'bar'},
+                {name:'ufo'}
+            ]
+        }
+    })
+    var temp=new Vue({
+        el:'#temp',
+        data: {
+            items: [{msg: 'foo'},
+                {msg:'bar'}]
+        }
+    })
+</script>
+</html>
