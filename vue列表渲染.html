@@ -21,11 +21,23 @@
         <li class="divider">template</li>
         </template>
 </ul>
-<div>
-    
-</div>
+<h4>对象 v-for</h4>
+<ul id="repeat" class="demo">
+    <li v-for="(key,val) in repeat">
+        {{key}}:{{val}}
+    </li>
+</ul>
+<h4>值域 v-for</h4>
+<div id="n">
+<span v-for="n in 10">{{n}}</span>
+    </div>
 </body>
 <script>
+   new Vue({
+        el:'#n',
+       data:{
+        }
+   })
     var items=new Vue({
         el:'#item',
         data:{
@@ -51,6 +63,16 @@
         data: {
             items: [{msg: 'foo'},
                 {msg:'bar'}]
+        }
+    })
+    new Vue({
+        el:'#repeat',
+        data:{
+            repeat:{
+                name:'yang',
+                lastname:'li',
+                age:20
+            }
         }
     })
 </script>
