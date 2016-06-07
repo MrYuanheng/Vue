@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>方法与事件处理器</title>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<h4>方法处理器</h4>
+<div id="example">
+    <button v-on:click="greet">Greet</button>
+</div>
+<h4>内联语句处理器</h4>
+<div id="example-1">
+    <button v-on:click="say('hi')">say hi</button>
+    <button v-on:click="say('what')">say what</button>
+</div>
+</body>
+<script>
+    new Vue({
+        el:'#example-1',
+        methods:{
+            say:function (msg){
+                alert (msg)
+            }
+        }
+    })
+    var vm=new Vue({
+        el:'#example',
+        data:{
+            name:'liyang'
+        },
+        methods:{
+            greet:function(event){
+                alert('hello'+this.name+'!')
+                alert(event.target.tagName)
+            }
+        }
+    })
+
+</script>
+</html>
