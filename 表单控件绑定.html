@@ -1,4 +1,4 @@
-<html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <title>表单控件绑定</title>
     <meta charset="UTF-8">
@@ -51,6 +51,16 @@
     </select>
     <span>selected:{{selected}}</span>
 </div>
+<h4>动态选项</h4>
+<div id="option">
+    <select v-model="selected">
+        <option v-for="option in options" v-bind:value="option.value">
+        {{option.text}}
+        </option>
+    </select>
+    <span>selected:{{selected}}</span>
+</div>
+
 </body>
 <script>
     new Vue({
@@ -76,6 +86,17 @@
     })
     new Vue({
         el:'#multiple'
+    })
+    new Vue({
+        el:'#option',
+        data:{
+            selected:'A',
+            options:[
+                {text:'one',value:'A'},
+                {text:'tow',value:'B'},
+                {text:'three',value:'C'}
+            ]
+        }
     })
 </script>
 </html>
